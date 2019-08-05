@@ -1,0 +1,22 @@
+    #circle-container {
+    	position: relative;
+    	width: 48em;
+    	height: 48em;
+    	padding: 2.8em;
+        /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+    	/*
+    	border: dashed 1px;
+    	border-radius: 50%;
+    	*/
+    	margin: 1.75em auto 0;
+    }
+    #circle-container a {
+    	display: block;
+    	position: absolute;
+    	top: 50%; left: 50%;
+    	width: 4em; height: 4em;
+    	margin: -2em;
+    }
+
+    #circle-container img { display: block; width: 50%; }
+ 

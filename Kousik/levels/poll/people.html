@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>People in a circle</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+	<div class="container">
+		<div class="question text-primary text-center">
+			<h3>There are n people standing in a circle, of which you are one. Someone outside the circle goes around clockwise and repeatedly eliminates every other person in the circle, until one person — the winner — remains. Where should you stand so you become the winner? Each position is a button and the correct button has to be clicked</h3>
+		</div>
+
+		<div id='circle-container'>
+			
+		</div>
+		<div id='chosen-person'  align='center'>
+			<h2>Chosen person : None</h2>
+		</div>
+		<div style="width:350px;" align="center">
+			<button type="button" class="btn btn-success btn-lg pull-right">Submit</button>
+		</div>
+		<script type="text/javascript" src="people.js"></script>
+	</div>
+</body>
+</html>

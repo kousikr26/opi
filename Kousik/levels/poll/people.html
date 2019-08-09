@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Poll</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+	<div class="container">
+		<div class="question text-primary text-center">
+			<h3>You are currently running for reelection, but the polls aren't exactly in your favor. Each square in this grid is a county. Counties with a black dot are voting for you, while counties with a white dot are voting for your opponent. Can Mathlandia be divided (along the gridlines) into five contiguous states of equal area such that a majority of the states have more black dots than white dots?</h3>
+		</div>
+
+		<div class="grid-container" id="area-grid" align="center">
+			
+		</div>
+
+		<div id="button-list" class="btn-group">
+		</div>
+		<div style="width:350px;" align="center">
+			<button onclick="check_answer()" type="button" class="btn btn-success btn-lg pull-right">Submit</button>
+		</div>
+		<script type="text/javascript" src="people.js"></script>
+	</div>
+</body>
+</html>

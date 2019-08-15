@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nonogram</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="nonogram.css">
+  
+</head>
+<body>
+	<div class="container">
+		<div class="question text-primary text-center">
+			<h3>Your aim in these puzzles is to colour the whole grid in to black and white squares. At the top of each column, and at the side of each row, you will notice a set of one or more numbers. These numbers tell you the runs of black squares in that row/column. So, if you see '10 1', that tells you that there will be a run of exactly 10 black squares, followed by one or more white square, followed by a single black square. There may be more white squares before/after this sequence</h3>
+		</div>
+
+		<div class="grid-container" id="area-grid" align="center">
+			
+		</div>
+
+		<div style="width:350px;" align="center">
+			<button onclick="check_answer()" type="button" class="btn btn-success btn-lg pull-right">Submit</button>
+		</div>
+		<script type="text/javascript" src="nonogram.js"></script>
+	</div>
+</body>
+</html>

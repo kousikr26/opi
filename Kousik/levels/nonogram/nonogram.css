@@ -9,23 +9,8 @@
 .grid-item {
   background-color: #d9b3ff;
   border: 1px solid #000000;
-  padding: 40px;
+  padding: 50px;
   font-size: 30px;
   text-align: center;
 }
-.grid-item img{
-	height: 100px;
-	weight: 100px;
-}
-.black-circle{
- width: 100px;
- height: 100px;
- border-radius: 50%;
- background-color: black
-}
-.white-circle{
- width: 100px;
- height: 100px;
- border-radius: 50%;
- background-color: white
-}
+

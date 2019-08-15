@@ -20,7 +20,8 @@ function grid_click()
 
 	console.log("square"+this.id.slice(3));
 	var clicked_cell=document.getElementById("square"+this.id.slice(3));
-	clicked_cell.style.background=current_color;
+	if(rgb2hex(clicked_cell.style.backgroundColor)!=("#"+background_color)) clicked_cell.style.background="#"+background_color;
+	else clicked_cell.style.background=current_color;
 	//console.log(rgb2hex(clicked_cell.style.backgroundColor));
 
     
@@ -65,7 +66,6 @@ function check_answer(){
 
 }
 // CORRECT ANSWER 122233123334122534111544555544 REMOVE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111
-
 var buttons=document.getElementById('button-list');
 for(var i=1;i<=5;i++){
 	var button =document.createElement('button');

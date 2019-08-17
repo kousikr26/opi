@@ -28,7 +28,7 @@ function click(){
         while(selected_corners.length<4){
         	if(selected_corners.length==2 || selected_corners.length==4) {
         		newButton.textContent = "Selected";
-                //newButton.onclick = break();
+                /newButton.onclick = break();
             }
             else if(selected_corners.length != 2 && selected_corners.length != 4){
             	newButton.textContent== "Select each corner(2 OR 4) of rectangle you want to select"

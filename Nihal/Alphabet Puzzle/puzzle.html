@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Answer Is The Key</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style type="text/css">
+		body {
+		  margin: 0;
+		  font-family: "Oswald", sans-serif;
+		  color: #444;
+		  }
+
+		section {
+		  height: 90vh;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  text-align: center;
+		}
+
+		.slanted {
+		  font-size: 40px;
+		  text-transform: uppercase;
+		  transform: rotate(-10deg)
+		             skew(-5deg);
+		  background-color: #ffc;
+		  padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div style="font-size: 40px;	color: #7cb76a;">What Comes Next?? </div>	
+		<form action="/puzzle" method="POST">
+			<label for="answer"> Answer : </label>
+			<input type="text" name="answer" id="answer">
+			<button class="btn btn-primary">Submit</button>
+		</form>
+		<section>
+	  <span class="slanted">AF</span>
+	  <span class="slanted">BE</span>
+	  <span class="slanted">CF</span>
+	  <span class="slanted">DI</span>
+	  <span class="slanted">FD</span>	
+	  <span class="slanted">??</span>	
+	</section>
+	</div>
+
+</body>
+</html>

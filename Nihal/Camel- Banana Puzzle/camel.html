@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Technothlon</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            .container {
+                padding-top: 10px;
+            }
+            p {
+                font-size: 20px;
+            }
+            hr {
+                width: 900px;
+                margin: 10px 0 0 0;
+                border: 2px solid red;
+            }
+            #right {
+                margin-left: 880px;
+            }
+            input {
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>The Puzzle Of The Banana Transportation</h1>
+            <p>A person has 3000 bananas and a camel. The person wants to transport maximum number of bananas to a destination which is 1000 KMs away, using only the camel as a mode of transportation. The camel cannot carry more than 1000 bananas at a time and eats a banana every km it travels. What is the maximum number of bananas that can be transferred to the destination using only camel (no other mode of transportation is allowed).</p>
+            <p>Distance Of Camel From A : <span id="distance"></span></p>
+            <button class="btn btn-primary"></button>
+            <hr>
+            <div><span id="left">A</span> <span id="right">B</span></div>
+            <form action="/camel" method="POST">
+                <input type="text" name="bananas" placeholder="Enter No. Of Bananas To Carry">
+                <input type="text" name="distance" placeholder="Enter Distance To Travel">
+                <button type="Submit">Submit</button>
+            </form>
+        </div>
+
+    </body>
+</html>

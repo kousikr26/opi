@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mondarin_bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="md.css">
+</head>
+
+<body>
+	<div class="container">
+   		<div class="text-center text-dark bg-succcess"><h1>You are given a 8x8 square grid.Divide this grid into any number of rectangles such that the difference between the area of the largest and the smallest rectangle is minimum!</h1>
+   		</div>
+
+   		<div class="instruction"> <h2> <b> "Select each corner(2 OR 4) of rectangle you want to select" </b></h2></div>
+
+   		<div class="box-container" align="center"></div>
+
+        <div class="answer text-success"> <h3> Your answer is <span id="largest"></span> - <span id="smallest"></span> = <span id = "ans"></span>  </h3> </div>
+
+         
+        
+        <div class= "buttons">
+         <button onclick="selectNewRectangle()" id="selectNewRectangle" type="button" class="btn btn-space btn-lg btn-danger">Select New Rectangle</button>
+         <button type="button" onclick="check()" class="btn btn-space btn-lg btn-success">See My Answer</button>
+         <button type="button" onclick ="location.reload()" class="btn btn-space btn-lg btn-success">RESET</button>
+         <button type="button" onclick ="submit()" id="submit" class="btn btn-space btn-lg btn-success" disabled>SUBMIT</button>
+        </div>
+ 	</div>
+ 	<script type="text/javascript" src="md.js"></script>		
+ </body> 	

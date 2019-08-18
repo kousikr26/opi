@@ -1,0 +1,58 @@
+body {
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  height: 100vh;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+}
+
+::selection {
+  background: #0080FF;
+  text-shadow: none;
+}
+
+.instruction {
+	display: none;
+	text-align: center;
+	margin-left: 12%;
+}
+
+.buttons {
+	align-items: center;
+	align-content: center;
+	text-align: center;
+	margin-left: 17%;
+
+}
+
+.btn-space {
+	margin: 5px;
+}
+	.btn:hover {
+     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      }
+
+.box-container {
+	display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    grid-gap: 5px;
+    background-color: #331a00;
+    padding: 10px;
+    margin-left: 17%;
+}
+
+.innerBox {
+	background-color: #ffff66;
+	padding: 10px;
+	border: 1px solid black ;
+	padding: 42px;
+}
+
+.answer {
+	margin-top: 15px;
+	margin-bottom:  15px;
+	color: white;
+}

@@ -16,10 +16,15 @@ function hex(x) {
   return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
  }
 function grid_click()
-{
+{	
+
+	console.log("square"+this.id.slice(3));
 	var clicked_cell=document.getElementById("square"+this.id.slice(3));
 	if(rgb2hex(clicked_cell.style.backgroundColor)!=("#"+background_color)) clicked_cell.style.background="#"+background_color;
 	else clicked_cell.style.background=current_color;
+	//console.log(rgb2hex(clicked_cell.style.backgroundColor));
+
+    
 }
 function button_click(){
 	current_color=color_array[Number(this.id.charAt(this.id.length-1))-1];
@@ -34,24 +39,31 @@ function check_answer(){
 		region_array.push(region);
 		hexregion_array.push(rgb2hex(region.style.backgroundColor));
 		if(rgb2hex(region.style.backgroundColor)==background_color){
-			alert("All squares not filled");
+			console.log("ALL squares not filled");
 		}
 	}
+	console.log(hexregion_array);
 	for(var i=1;i<=n;i++){
 		var check_region=document.getElementById("square"+i);
 		var check_region_color=rgb2hex(check_region.style.backgroundColor);
+		console.log("check"+check_region_color);
 		var index=hexregion_array.indexOf(check_region_color);
+		console.log("index"+index)
 		if(index==-1){
-			alert("Color not found in array");
+			console.log("Color not found in array");
+
 		}
 		else if(index==5){
-			alert("ALl colors are not filled");
+			console.log("ALl colors are not filled");
 		}
 		else{
 			answer_string+=index+1
 		}
+
 	}
+	
 	console.log(answer_string);
+
 }
 // CORRECT ANSWER 122233123334122534111544555544 REMOVE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111
 var buttons=document.getElementById('button-list');
@@ -62,12 +74,18 @@ for(var i=1;i<=5;i++){
 	button.onclick=button_click;
 	button.classList.add("btn");
 	button.classList.add("btn-lg");
+
 	button.style.background=color_array[i-1];
 	buttons.appendChild(button);
+	
 }
+
+
 var n=30;
 var grid=document.getElementById("area-grid");
 for(var iterator=1;iterator<=n;iterator++){
+
+
 	var newelement=document.createElement('div');
 	var dotelement=document.createElement('div');
 	dotelement.onclick=grid_click;
@@ -84,4 +102,5 @@ for(var iterator=1;iterator<=n;iterator++){
 	newelement.style.background=current_color;
 	newelement.appendChild(dotelement);
 	grid.appendChild(newelement);
+
 }

@@ -201,7 +201,7 @@ function c5()
   j2=drawvertical(d5,d7,g2,l2);
   if(j2==1||j2==2)
   {
-    jd2==j2;
+    jd2=j2;
   }
   if(d5==1&&d7==1){
    d5=0;
@@ -324,7 +324,7 @@ function c9()
    drawvertical(d9,d13,g4,l4);
    j4=drawvertical(d9,d13,g4,l4);
    if(j4==1||j4==2){
-    jd4==j4;
+    jd4=j4;
    }
   if(d9==1&&d13==1){
    d13=0;

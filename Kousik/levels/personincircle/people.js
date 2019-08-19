@@ -19,7 +19,7 @@ function reply_click()
 
 
 var circle=document.getElementById("circle-container");
-var n=90;//CODE BREAKS IF n IS HIGHER THAN 80
+var n=70;//CODE BREAKS IF n IS HIGHER THAN 80
 var rotatedegrees=0;
 var translatedegrees=23;
 for(var iterator=1;iterator<=n;iterator++){

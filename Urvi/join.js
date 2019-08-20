@@ -1,3 +1,6 @@
+var a=[0,0];
+
+
 //function drawCanvas() {
 	var grid=document.getElementById("grid");
 
@@ -11,6 +14,7 @@
 		a.classList.add("grid-item");
 		b.classList.add("button");
 		b.innerHTML='12';
+		b.onclick=button_click;
 		a.appendChild(b);
 		grid.appendChild(a);
 	}
@@ -22,12 +26,22 @@
 	alert(x+"\n"+y+"\n"+x2+"\n"+y2);
 */
 
-	x=document.getElementById("1").getBoundingClientRect().left;
-	y=document.getElementById("1").getBoundingClientRect().top;
-	x2=document.getElementById("14").getBoundingClientRect().left;
-	y2=document.getElementById("14").getBoundingClientRect().top;
-	alert(x+"\n"+y+"\n"+x2+"\n"+y2);
-
+	
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
+function button_click(){
+	if(!a[0]){
+		a[0]=this.id;
+	}
+	else{
+		a[1]=this.id;
+		x=document.getElementById(a[0]).getBoundingClientRect().left+0.5*document.getElementById(a[0]).getBoundingClientRect().width;
+	y=document.getElementById(a[0]).getBoundingClientRect().top+0.5*document.getElementById(a[0]).getBoundingClientRect().height;
+	//xright=document.getElementById(a[0]).getBoundingClientRect().width;
+	x2=document.getElementById(a[1]).getBoundingClientRect().left+0.5*document.getElementById(a[1]).getBoundingClientRect().width;
+	y2=document.getElementById(a[1]).getBoundingClientRect().top+0.5*document.getElementById(a[1]).getBoundingClientRect().height;
+	//alert(x+"\n"+y+"\n"+x2+"\n"+y2);
+	a[0]=0;
+	a[1]=0;
 	var c=document.getElementById("canvas");
 	if(c.getContext){
 		var ctx=c.getContext("2d");
@@ -39,6 +53,6 @@
 	}
 	console.log("jhjsdhbdb");	
 
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
-function func(){
+	}
+
 }

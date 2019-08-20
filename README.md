@@ -15,6 +15,8 @@
 
 [bridges](https://kousikr26.github.io/opi/Taruna/connect.html)
 
+[crack](https://kousikr26.github.io/opi/Taruna/crack.html)
+
 [layout](https://kousikr26.github.io/layout/navbar.html)
 
 [logic34](https://kousikr26.github.io/opi/Nihal/Logic%2034/logic34.html)

@@ -25,7 +25,7 @@
 
 [alphabet](https://kousikr26.github.io/opi/Nihal/Alphabet%20Puzzle/puzzle.html)
 
-[digits](https://kousikr26.github.io/opi/Param/level.html)
+[digits](https://kousikr26.github.io/opi/Param/digits/level.html)
 
 ye mat khelna bahot kharab hai [click](https://kousikr26.github.io/opi/Param/RightClick/x.html)
 

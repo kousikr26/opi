@@ -31,6 +31,18 @@ ye mat khelna bahot kharab hai [click](https://kousikr26.github.io/opi/Param/Rig
 
 [River Crossing Logic 35](https://kousikr26.github.io/opi/Abhishek/River%20crossing%20puzzle%20level%2035/35.html)
 
+#TODO:
+
+## Single Player:
+	1. User Model: *No of Tries*
+	2. Skip && Hints - Increase the level currlevel counter
+	3. Redirect to Multiplayer and they return to the same level they were in
+
+## Multi Player:
+	1. Pop Up link after a stipulated time (**Desi tareeka**)
+	2. Link auto pop up after t time
+	3. Redirect to prev single player level
+	4. n vs m random pairing
 
 
 

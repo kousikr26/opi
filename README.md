@@ -17,13 +17,20 @@
 
 [crack](https://kousikr26.github.io/opi/Taruna/crack.html)
 
-[layout](https://kousikr26.github.io/layout/navbar.html)
+[layout](https://kousikr26.github.io/opi/layout/navbar.html)
 
 [logic34](https://kousikr26.github.io/opi/Nihal/Logic%2034/logic34.html)
 
 [building](https://kousikr26.github.io/opi/Nihal/25%20Floor%20Building/building.html)
 
 [alphabet](https://kousikr26.github.io/opi/Nihal/Alphabet%20Puzzle/puzzle.html)
+
+[digits](https://kousikr26.github.io/opi/Param/digits/level.html)
+
+ye mat khelna bahot kharab hai [click](https://kousikr26.github.io/opi/Param/RightClick/x.html)
+
+[River Crossing Logic 35](https://kousikr26.github.io/opi/Abhishek/River%20crossing%20puzzle%20level%2035/35.html)
+
 
 
 

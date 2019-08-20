@@ -1,0 +1,22 @@
+.jumbotron{
+	text-align: center;
+	/*font-weight: 900;*/
+	/*font-size: 30px;*/
+}
+h1{
+	text-align: center;
+	margin-top: 50 px;
+}
+input{
+	margin-top: 30px;
+	width: 270px;
+	height: 270px;
+	text-align: center;
+
+}
+.c{
+	text-align: center;
+	margin-left: 500px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}

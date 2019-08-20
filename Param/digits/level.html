@@ -1,0 +1,90 @@
+<html>
+<head>
+<script>
+function validateForm(){
+var ar=new Array(9); 
+ar[0] = ""+document.forms["myForm"]["1"].value;
+ar[1] = ""+document.forms["myForm"]["2"].value;
+ar[2] = ""+document.forms["myForm"]["3"].value;
+ar[3] = ""+document.forms["myForm"]["4"].value;
+ar[4] = ""+document.forms["myForm"]["5"].value;
+ar[5] = ""+document.forms["myForm"]["6"].value;
+ar[6] = ""+document.forms["myForm"]["7"].value;
+ar[7] = ""+document.forms["myForm"]["8"].value;
+ar[8] = ""+document.forms["myForm"]["9"].value;
+var arr=[1,1,1,1,1,1,1,1,1];
+for(var i=0;i<9;i++){
+    for(var j=0;j<ar[i].length;j++){
+        arr[ar[i][j]-'1']++;
+        }
+    }
+var p=0;
+for(var i=0;i<9;i++){
+    p=p+arr[i];
+}
+for(var i=0;i<9;i++){
+    arr[i]=p-arr[i];
+}
+var ax=new Array(9);
+var s=0;
+for(var i=0;i<9;i++){
+    ax[i]=parseInt(ar[i],10);
+    if(ax[i]==arr[i]){
+        s++;
+    }
+}
+if(s==9){
+    alert("Correct");
+}else{
+    alert("Wrong");
+}
+}
+</script>
+</head>
+<body bgcolor="#33DDFF">
+<h1 align="center" color="blue"><b>It's Brain Time<b></h1>
+<form align="center"  name="myForm" onsubmit="return validateForm()" method="post">
+<fieldset>
+<p align="center">
+<label>The number of digits in this box that are not 1 is</label>
+<input type="text" name="1" required>
+</p>
+<p align="center">
+<label>The number of digits in this box that are not 2 is</label>
+<input type="text" name="2" required>
+</p>
+<p align="center">
+<label>The number of digits in this box that are not 3 is</label>
+<input type="text" name="3" required>
+</p>
+<p align="center">
+<label>The number of digits in this box that are not 4 is</label>
+<input type="text" name="4" required>
+</p>
+<p align="center">
+<label>The number of digits in this box that are not 5 is</label>
+<input type="text" name="5" required>
+</p>
+<p align="center">
+<label>The number of digits in this box that are not 6 is</label>
+<input type="text" name="6" required>
+</p>
+<p align="center">
+<label>The number of digits in this box that are not 7 is</label>
+<input type="text" name="7" required>
+</p>
+<p align="center">
+<label>The number of digits in this box that are not 8 is</label>
+<input type="text" name="8" required>
+</p>
+<p align="center">
+<label>The number of digits in this box that are not 9 is</label>
+<input type="text" name="9" required>
+</p>
+<p align="center">
+<input type="submit">
+</p>
+</fieldset>
+</form>
+</body>
+</html>

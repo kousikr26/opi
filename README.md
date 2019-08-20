@@ -29,7 +29,7 @@
 
 ye mat khelna bahot kharab hai [click](https://kousikr26.github.io/opi/Param/RightClick/x.html)
 
-[River Crossing Logic 35] (https://kousikr26.github.io/opi/Abhishek/River%20crossing%20puzzle%20level%2035/35.html)
+[River Crossing Logic 35](https://kousikr26.github.io/opi/Abhishek/River%20crossing%20puzzle%20level%2035/35.html)
 
 
 

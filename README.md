@@ -7,7 +7,7 @@
 
 [nonogram2](https://kousikr26.github.io/opi/Kousik/levels/nonogram2/nonogram2.html)
 
-[people](https://kousikr26.github.io/opi/Kousik/levels/peopleincircle/people.html)
+[people](https://kousikr26.github.io/opi/Kousik/levels/personincircle/people.html)
 
 [square](https://kousikr26.github.io/opi/Kousik/square.html)
 

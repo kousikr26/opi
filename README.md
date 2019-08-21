@@ -9,7 +9,7 @@
 
 [people](https://kousikr26.github.io/opi/Kousik/levels/personincircle/people.html)
 
-[flash](https://kousikr26.github.io/opi/Kousik/levels/flash/flash.html)
+[flash](https://kousikr26.github.io/opi/Kousik/levels/screenflash/flash.html)
 
 [square](https://kousikr26.github.io/opi/Kousik/square.html)
 

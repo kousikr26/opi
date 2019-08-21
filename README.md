@@ -9,6 +9,8 @@
 
 [people](https://kousikr26.github.io/opi/Kousik/levels/personincircle/people.html)
 
+[flash](https://kousikr26.github.io/opi/Kousik/levels/flash/flash.html)
+
 [square](https://kousikr26.github.io/opi/Kousik/square.html)
 
 [mondarin](https://kousikr26.github.io/opi/Abhishek/Mondarin%20Maths%20Puzzle/md.html)

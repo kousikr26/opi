@@ -1,10 +1,60 @@
 <html>
 <head>
     <title>flash</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>	
+	<style>
+		.play-button-outer {
+		  margin: 10% auto;
+		  width: 10em;
+		  height: 10em;
+		  background-color: rgba(0, 0, 0, .25);
+		  cursor: pointer;
+		  border-radius: 25px;
+		}
 
+		.play-button {
+		  margin: 0 auto;
+		  top: 25%;
+		  position: relative;  
+		  width: 0;
+		  height: 0;
+		  border-style: solid;
+		  border-width: 2.5em 0 2.5em 5em;
+		  border-color: transparent transparent transparent #000;
+
+		  opacity: .75; 
+		}
+
+		.play-button-outer:hover {
+		  background-color: rgba(0, 0, 0, .5);
+		}
+
+		.play-button-outer:hover .play-button {
+		  opacity: 1;
+		}
+
+
+
+	</style>
+	<script type="text/javascript" src="flash.js"></script>
 </head>
     <body>
-        Hello
-        <script type="text/javascript" src="flash.js"></script>
+        <div class="play-button-outer">
+		  <div class="play-button" onclick="play()"></div>
+		</div>
+		<div>
+			<form align="center">
+			  <label for="answer">The answer is</label>
+			  <input type="text" id="answer" name="answer">
+			</form>
+			<div style="width:350px;" align="center">
+				<button onclick="#" type="button" class="btn btn-success btn-lg">Submit</button>
+			</div>
+		</div>
+        
     </body>
 </html>

@@ -1,28 +1,39 @@
-var sequence=[1,5,5,1,5,1,1];
-var flashStep = 1;
+var sequence=[1,1,1,1,1,5,1,5,1,5,1,1];
+var delaytim=[1,1,1,5,1,5,1,1,5,1,1,5];
+
 function white() {
-	document.bgColor="FFFFFF"
+	document.body.style.background ="#FFFFFF";
 
 }
 
 function red() {
-	document.bgColor="FF0000"
+
+	document.body.style.background ="#FF0000";
 
 }
 
+var timeouts = [];
 
-var delay=1;
-var count=delay;
-var factor=300;
-for(var i=0;i<sequence.length;i++){
+
+
+
+function play(){
 	
-	setTimeout(red,count*factor);
-	count+=sequence[i];
-	setTimeout(white,count*factor);
-	count+=delay;
+	var count=delaytim[0];
+	var factor=220;
+	for (var j=0; j<timeouts.length; j++) {
+  		clearTimeout(timeouts[j]);
+	}
+	for(var i=0;i<sequence.length;i++){
+		
+		timeouts.push(setTimeout(red,count*factor));
+		count+=sequence[i];
+		timeouts.push(setTimeout(white,count*factor));
+		count+=delaytim[i];
+
+	}
+
+
 }
-
-
-
 
 

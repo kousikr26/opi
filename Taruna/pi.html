@@ -5,17 +5,17 @@
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style type="text/css">
 		img {
-             display: block;
-             margin-left: auto;
-             margin-right: auto;
-             width: 50%;
-              }
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         width: 50%;
+          }
 
-        .btn{
-        	 margin-left: auto;
-             margin-right: auto;
-             width: 10%;
-        }
+    .btn{
+    	 margin-left: auto;
+         margin-right: auto;
+         width: 10%;
+    }
 
 		h1,h4{
 			margin-top: 20px;
@@ -25,48 +25,38 @@
 		}
 		body{
 			background-color: rgb(9, 48, 115);
+      padding-bottom: 20px;
 		}
-		.c{
-	        text-align: center;
-	        margin-left: 45%;
-	        margin-right: 45%;
-	        margin-top: 50px;
-	        margin-bottom: 50px;
-        }
-        input{
-        	margin-left: 42%;
-	        margin-right: 42%;
-        }
 	</style>
 </head>
 <body>
 	<div class="container">
 	  <h1>What does the image below represent?</h1>
       <img src="https://i.stack.imgur.com/O9a9n.jpg">
-      <div>
-      	<h4>Type your answer:</h4>
-      	<input id="one" type="text" name="name" style="font-size:20pt">
-      	<button class="btn btn-success lg c">Submit</button>
-      </div>
-      
+    	<h4>Type your answer:</h4>
+      <form style="text-align: center;">
+        <div>
+          <input id="one" type="text" name="name" style="font-size:20pt; margin-bottom: 10px;">
+        </div>
+        <button class="btn btn-success lg">Submit</button>
+      </form>
     </div>
- <script type="text/javascript">
- 	var button=document.querySelector(".btn");
-	button.addEventListener("click",correct);
-	function correct()	{
-	var x;
-    x=document.getElementById("one").value;
+   <script type="text/javascript">
+     	var button=document.querySelector(".btn");
+    	button.addEventListener("click",correct);
+    	function correct()	{
+    	var x;
+      x=document.getElementById("one").value;
 
-    if(x=="3.14159265")
-    {
-    	alert("You are right!!!");
+      if(x=="3.14159265")
+      {
+      	alert("You are right!!!");
+      }
+      else
+      {
+      	alert("Try again??");
+      }
     }
-    else
-    {
-    	alert("Try again??");
-    }
-}
- </script>
-    
+   </script>
 </body>
 </html>

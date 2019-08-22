@@ -16,15 +16,8 @@ var hints={
 	13:"4",
 	19:"2",
 	25:"2",
-	31:"1",
-
-
-
-
-
+	31:"1"
 };
-
-
 
 function rgb2hex(rgb) {
  rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
@@ -46,10 +39,6 @@ function button_click(){
 	else region.style.background="#000000";
 
 }
-
-
-
-
 
 var n=36;
 var grid=document.getElementById("area-grid");
@@ -96,7 +85,7 @@ function check_answer(){
 		alert("you won");
 	}
 	else{
-		console.log("YOu lost");
+		console.log("You lost");
 		console.log(clicks);
 		alert("You lost");
 	}

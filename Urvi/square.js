@@ -41,7 +41,7 @@ function check(){
 	for(var k=0;k<25;k++){
 		c+=s[k];
 	}	
-	if(c==15){
+	if(c==15 || c==14){
 		var  fail=0;
 		while(1){
 			    //check for 1x1 squses
@@ -161,18 +161,21 @@ function check(){
         { fail=1; break; }
     else{
     	//console.log(fail);
-    	console.log("correct");
+        if(c==15)
+            alert("Correct. 10 dots removed");
+        else if(c==14)
+            alert("Correct- partial - 11 dots removed");
     	break;
     }
 		}
 		//console.log(fail);
 		if(fail==1){
-			console.log("Wrong ans");
+			alert("Wrong ans");
 		}
 		
 
 	}	
 	else{
-		console.log("wrong ");
+		alert("wrong ");
 	}
 }

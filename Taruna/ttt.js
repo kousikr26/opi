@@ -346,7 +346,5 @@ function final(){
 	   }
 	   alert("PLAYER2 WINS!!!");
       }
-	else{
-		alert("DRAW!!!");
-	}
+	
 }

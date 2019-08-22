@@ -39,7 +39,7 @@ function check_answer(){
 		region_array.push(region);
 		hexregion_array.push(rgb2hex(region.style.backgroundColor));
 		if(rgb2hex(region.style.backgroundColor)==background_color){
-			console.log("ALL squares not filled");
+			console.log("All squares not filled");
 		}
 	}
 	console.log(hexregion_array);
@@ -54,7 +54,7 @@ function check_answer(){
 
 		}
 		else if(index==5){
-			console.log("ALl colors are not filled");
+			console.log("All colors are not filled");
 		}
 		else{
 			answer_string+=index+1

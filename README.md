@@ -11,6 +11,8 @@
 
 [flash](https://kousikr26.github.io/opi/Kousik/levels/screenflash/flash.html)
 
+[dynamicpi](https://kousikr26.github.io/opi/Kousik/levels/dynamicpi/dynamicpi.html)
+
 [square](https://kousikr26.github.io/opi/Kousik/square.html)
 
 [mondarin](https://kousikr26.github.io/opi/Abhishek/Mondarin%20Maths%20Puzzle/md.html)
@@ -18,6 +20,8 @@
 [bridges](https://kousikr26.github.io/opi/Taruna/connect.html)
 
 [crack](https://kousikr26.github.io/opi/Taruna/crack.html)
+
+[tictactoe](https://kousikr26.github.io/opi/Taruna/ttt.html)
 
 [layout](https://kousikr26.github.io/opi/layout/navbar.html)
 

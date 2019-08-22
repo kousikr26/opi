@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic-Tac-Toe</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+	.container{margin-top: 40px;margin-left: 20%}
+    .col-lg-1{width: 80px;height: 80px;
+             border:1px solid rgba(151, 160, 168, 0.5);}
+    .c04,.c07{border-left: 3px solid black}
+    #d41,#d42,#d43,#d44,#d45,#d46,#d47,#d48,#d49{border-top: 3px solid black;}
+    #d71,#d72,#d73,#d74,#d75,#d76,#d77,#d78,#d79{border-top: 3px solid black;}
+    h1{
+    	text-align: centre;
+    	margin-left: 40%;
+    	}
+   </style>
+</head>
+<body>
+	<h1>Tic-Tac-Toe</h1>
+	<div class="container">
+		
+		<div class="row r10">
+			<div class="col-lg-1 c01" id="d11"></div>
+			<div class="col-lg-1 c02" id="d12"></div>
+			<div class="col-lg-1 c03" id="d13"></div>
+			<div class="col-lg-1 c04" id="d14"></div>
+			<div class="col-lg-1 c05" id="d15"></div>
+			<div class="col-lg-1 c06" id="d16"></div>
+			<div class="col-lg-1 c07" id="d17"></div>
+			<div class="col-lg-1 c08" id="d18"></div>
+			<div class="col-lg-1 c09" id="d19"></div>
+		</div>
+		<div class="row r20">
+			<div class="col-lg-1 c01" id="d21"></div>
+			<div class="col-lg-1 c02" id="d22"></div>
+			<div class="col-lg-1 c03" id="d23"></div>
+			<div class="col-lg-1 c04" id="d24"></div>
+			<div class="col-lg-1 c05" id="d25"></div>
+			<div class="col-lg-1 c06" id="d26"></div>
+			<div class="col-lg-1 c07" id="d27"></div>
+			<div class="col-lg-1 c08" id="d28"></div>
+			<div class="col-lg-1 c09" id="d29"></div>
+		</div> 
+		<div class="row r30">
+			<div class="col-lg-1 c01" id="d31"></div>
+			<div class="col-lg-1 c02" id="d32"></div>
+			<div class="col-lg-1 c03" id="d33"></div>
+			<div class="col-lg-1 c04" id="d34"></div>
+			<div class="col-lg-1 c05" id="d35"></div>
+			<div class="col-lg-1 c06" id="d36"></div>
+			<div class="col-lg-1 c07" id="d37"></div>
+			<div class="col-lg-1 c08" id="d38"></div>
+			<div class="col-lg-1 c09" id="d39"></div>
+		</div>
+		<div class="row r40">
+			<div class="col-lg-1 c01" id="d41"></div>
+			<div class="col-lg-1 c02" id="d42"></div>
+			<div class="col-lg-1 c03" id="d43"></div>
+			<div class="col-lg-1 c04" id="d44"></div>
+			<div class="col-lg-1 c05" id="d45"></div>
+			<div class="col-lg-1 c06" id="d46"></div>
+			<div class="col-lg-1 c07" id="d47"></div>
+			<div class="col-lg-1 c08" id="d48"></div>
+			<div class="col-lg-1 c09" id="d49"></div>
+		</div>
+		<div class="row r50">
+			<div class="col-lg-1 c01" id="d51"></div>
+			<div class="col-lg-1 c02" id="d52"></div>
+			<div class="col-lg-1 c03" id="d53"></div>
+			<div class="col-lg-1 c04" id="d54"></div>
+			<div class="col-lg-1 c05" id="d55"></div>
+			<div class="col-lg-1 c06" id="d56"></div>
+			<div class="col-lg-1 c07" id="d57"></div>
+			<div class="col-lg-1 c08" id="d58"></div>
+			<div class="col-lg-1 c09" id="d59"></div>
+		</div>
+		<div class="row r60">
+			<div class="col-lg-1 c01" id="d61"></div>
+			<div class="col-lg-1 c02" id="d62"></div>
+			<div class="col-lg-1 c03" id="d63"></div>
+			<div class="col-lg-1 c04" id="d64"></div>
+			<div class="col-lg-1 c05" id="d65"></div>
+			<div class="col-lg-1 c06" id="d66"></div>
+			<div class="col-lg-1 c07" id="d67"></div>
+			<div class="col-lg-1 c08" id="d68"></div>
+			<div class="col-lg-1 c09" id="d69"></div>
+		</div>
+		<div class="row r70">
+			<div class="col-lg-1 c01" id="d71"></div>
+			<div class="col-lg-1 c02" id="d72"></div>
+			<div class="col-lg-1 c03" id="d73"></div>
+			<div class="col-lg-1 c04" id="d74"></div>
+			<div class="col-lg-1 c05" id="d75"></div>
+			<div class="col-lg-1 c06" id="d76"></div>
+			<div class="col-lg-1 c07" id="d77"></div>
+			<div class="col-lg-1 c08" id="d78"></div>
+			<div class="col-lg-1 c09" id="d79"></div>
+		</div>
+		<div class="row r80">
+			<div class="col-lg-1 c01" id="d81"></div>
+			<div class="col-lg-1 c02" id="d82"></div>
+			<div class="col-lg-1 c03" id="d83"></div>
+			<div class="col-lg-1 c04" id="d84"></div>
+			<div class="col-lg-1 c05" id="d85"></div>
+			<div class="col-lg-1 c06" id="d86"></div>
+			<div class="col-lg-1 c07" id="d87"></div>
+			<div class="col-lg-1 c08" id="d88"></div>
+			<div class="col-lg-1 c09" id="d89"></div>
+		</div>
+		<div class="row r90">
+			<div class="col-lg-1 c01" id="d91"></div>
+			<div class="col-lg-1 c02" id="d92"></div>
+			<div class="col-lg-1 c03" id="d93"></div>
+			<div class="col-lg-1 c04" id="d94"></div>
+			<div class="col-lg-1 c05" id="d95"></div>
+			<div class="col-lg-1 c06" id="d96"></div>
+			<div class="col-lg-1 c07" id="d97"></div>
+			<div class="col-lg-1 c08" id="d98"></div>
+			<div class="col-lg-1 c09" id="d99"></div>
+		</div>
+	</div>
+  <script type="text/javascript" src="ttt.js"></script>
+</body>
+</html>

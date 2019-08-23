@@ -27,9 +27,6 @@ var hints={
 	89:"1 2 1 2",
 	100:"1 3",
 	111:"1 3 3",
-
-
-
 };
 
 
@@ -54,10 +51,6 @@ function button_click(){
 	else region.style.background="#000000";
 
 }
-
-
-
-
 
 var n=121;
 var grid=document.getElementById("area-grid");

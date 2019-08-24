@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>  
+ 	<!link rel="stylesheet" type="text/css" href="a.css">
+
+</head>
+<body>
+	<div class="container" align="center">
+		<h1>JOIN THE DOTS!</h1>
+	 	<canvas id="canvas" width="1000" height="500" style="border:1px solid #fff451"></canvas>
+		
+		
+				
+		<script type="text/javascript" >
+			///REMOVEE ANSWWERRR
+			var ansr=[14,13,12,11,10,9,10,11,12,10,8,7,6,5,5,3,1,1,2,3,4,5,5,5,5,5];
+			var ansc=[7,7,7,7,7,7,5,3,1,0,1,1,1,1,0,1,2,3,3,3,3,3,4,5,6,7];
+			////REMOVE
+			var text=[9,9,9,9,9,1,1,1,10,8,9,9,9,12,8,8,6,3,3,3,3,6,6,6,6,12];
+			var a=[];
+			for(var i=0;i<12;i++)
+				a[i]=i+1;
+			var c=document.getElementById("canvas");
+			var ctx=c.getContext("2d");
+			for(var x=0; x<15;x++){
+      			for(var y=0; y<8;y++){
+        			ctx.fillStyle = "#ff8c1a";
+        			ctx.beginPath();
+        			ctx.arc(15+60*x,15+ 60*y, 15, 0, Math.PI*2, true); 
+       				ctx.closePath();
+        			ctx.fill();  
+        			ctx.beginPath();
+        			ctx.fillStyle="black";
+        			var flag=0;
+        			for(var w=0;w<26;w++){
+        				if(x==ansr[w] && y==ansc[w]){
+        					ctx.fillText(text[w],10+60*x,18+60*y);
+        					flag=1;
+        					break;
+        				}
+        			}
+        			if(flag==0)
+        			ctx.fillText(a[parseInt(Math.random()*12)],10+60*x,18+60*y);
+        			ctx.fill();
+    		 	}
+    		 }
+    		 ctx.beginPath();
+    		 ctx.font="25px Georgia";
+    		 ctx.fillText("Start",870,450);
+    		 ctx.fillText("End",295,480)
+    		 ctx.fill();
+    		// ctx.fillText("0",10,18);
+			//Function to get the mouse position
+			function getMousePos(canvas, event) {
+			    var rect = canvas.getBoundingClientRect();
+			    //	alert(event.clientX-rect.left," ",event.clientY-rect.top);
+			    return {
+			        x: event.clientX - rect.left,
+			        y: event.clientY - rect.top
+			    };
+			}
+			//Function to check whether a point is inside a rectangle
+			function isInside(pos, rect){
+			    return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
+			}
+
+			var canvas = document.getElementById("canvas");
+			var ctx = canvas.getContext('2d');
+			//The rectangle should have x,y,width,height properties
+			//ctx.rect(60,60,30,30);
+			//ctx.stroke();
+			//Binding the click event on the canvas
+			//console.log('qwerty');
+								
+			canvas.addEventListener('click', function(evt) {
+			    var mousePos = getMousePos(canvas, evt);
+			    //console.log(mousePos);
+					for(var r=0;r<15;r++){
+						for(var c=0;c<8;c++){
+							var rect = {
+										    x:0+60*r,
+										    y:0+60*c,
+										    width:30,
+										    height:30
+										};
+										
+						    if (isInside(mousePos,rect)) {
+						    	//console.log(r, c);
+						        click(r,c);
+						    }
+						 
+						}
+					}
+			       
+			}, false);
+			var qr=[];
+			var qc=[];
+			var selected= [-1,-1];//[r of 1st dot,c of 1st dot, r of 2nd dot, c of 2nd dot]
+			function click(r,c){
+				if(selected[0]==-1){
+					selected[0]=r;
+					selected[1]=c;
+					qr.push(r);
+					qc.push(c);
+				}
+				else{
+					ctx.beginPath();
+					ctx.moveTo(selected[0]*60+15,selected[1]*60+15);
+					ctx.lineTo(r*60+15,c*60+15);
+					ctx.stroke();
+					selected[0]=r;
+					selected[1]=c;
+					qr.push(r);
+					qc.push(c);
+					console.log(qr);
+					console.log(qc);
+					if((JSON.stringify(qr)==JSON.stringify(ansr))&&  (JSON.stringify(qc)==JSON.stringify(ansc))){
+						alert('YOU WIN');
+					}
+
+				}
+			
+			//console.log('zxcvbnm');
+			}
+
+			
+		</script> 
+  	 
+	    
+	</div>
+
+</body>
+</html>

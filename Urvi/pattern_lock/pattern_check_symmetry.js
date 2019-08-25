@@ -1,4 +1,3 @@
-console.log("asdfghjkl");
 var lock = new PatternLock("#lock", {
   onPattern: function(pattern) {
     // Context is the pattern lock instance
@@ -98,8 +97,9 @@ var lock = new PatternLock("#lock", {
 	
 	//console.log(p.length)	;			
    if(p.length>8 && los>0)
-   	alert("YOU WIN!!!!!!!!!!!!");
+   	alert("Correct");
    else
-   	alert("you lose. try again");
+   	lock.clear();
+   // 	alert("you lose. try again");
    }
 });

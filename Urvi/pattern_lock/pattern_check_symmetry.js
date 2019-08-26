@@ -97,8 +97,9 @@ var lock = new PatternLock("#lock", {
 	
 	//console.log(p.length)	;			
    if(p.length>8 && los>0)
-   	alert("YOU WIN!!!!!!!!!!!!");
+   	alert("Correct");
    else
-   	alert("you lose. try again");
+   	lock.clear();
+   // 	alert("you lose. try again");
    }
 });

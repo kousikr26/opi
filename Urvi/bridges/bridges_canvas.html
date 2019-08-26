@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bridges</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>  
+ 	
+</head>
+<body>
+	<div class="container" align="center">
+		<div class="Jumbotron">
+  		<h3>Connect every island,such that any island can be reached from any other. Each island contains a number that shows you how many brides leave that island.Up to two bridges can connect islands together. Bridges can only go horizontally or vertically and may not croos each other.</h3>
+     </div>
+		<canvas id="canvas" width="560" height="560" style="border:0px solid #000000"></canvas>
+		<div>
+		<button onclick="submit()">submit</button>
+			
+		</div>
+	</div>
+	<script type="text/javascript">	
+			var s=new Array();
+			for(var m=0;m<14;m++){
+					var tmp=new Array();
+
+				for(var n=0;n<14;n++){
+					tmp.push(0);
+				
+				}
+					s.push(tmp);
+			}
+
+//HIDE ANSWER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			s[0][1]=s[1][0]=2;
+			s[1][2]=s[2][1]=2;
+			s[5][6]=s[6][5]=1;
+			s[7][8]=s[8][7]=1;
+			s[11][12]=s[12][11]=1;
+			s[12][13]=s[13][12]=1;
+			s[0][11]=s[11][0]=2;
+			s[3][5]=s[5][3]=1;
+			s[5][9]=s[9][5]=2;
+			s[7][12]=s[12][7]=1;
+			s[1][4]=s[4][1]=2;
+			s[6][13]=s[13][6]=2;
+			s[2][10]=s[10][2]=2;
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			var c=document.getElementById("canvas");
+			var ctx=c.getContext("2d");
+			ctx.beginPath();
+			ctx.font="60px Georgia";
+			ctx.fillText("4",20,60);
+		 	ctx.fill();
+			var xx=[0,4,6,1,4,1,5,2,4,1,6,0,2,5];
+			var yy=[0,0,0,1,2,3,3,4,4,5,5,6,6,6];
+			var txt=[4,6,4,1,2,4,3,2,1,2,2,3,3,3];
+			for(var i=0;i<14;i++){
+				ctx.rect(xx[i]*80,yy[i]*80,80,80);
+				ctx.fillText(txt[i],xx[i]*80+20,yy[i]*80+60);
+			}
+			ctx.stroke();
+			//Function to get the mouse position
+			function getMousePos(canvas, event) {
+			    var rect = canvas.getBoundingClientRect();
+			    //	alert(event.clientX-rect.left," ",event.clientY-rect.top);
+			    return {
+			        x: event.clientX - rect.left,
+			        y: event.clientY - rect.top
+			    };
+			}
+			//Function to check whether a point is inside a rectangle
+			function isInside(pos, rect){
+			    return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
+			}
+			canvas.addEventListener('click', function(evt) {
+			    var mousePos = getMousePos(canvas, evt);
+			    //console.log(mousePos);
+					for(var r=0;r<14;r++){
+						var rect = {
+									    x:0+80*xx[r],
+									    y:0+80*yy[r],
+									    width:80,
+									    height:80
+									};
+									
+					    if (isInside(mousePos,rect)) {
+					    	console.log(xx[r],yy[r],txt[r]);
+					        click(r);
+					    }
+					 
+						
+					}
+			       
+			}, false);
+			var selected=-1;
+			var lines=new Array();
+			for(var m=0;m<14;m++){
+					var tmp=new Array();
+
+				for(var n=0;n<14;n++){
+					tmp.push(0);
+				
+				}
+					lines.push(tmp);
+			}
+			//console.log("qwerty",lines[4][4]);
+			function click(r){
+			//	console.log("check 1");
+				if(selected==-1 ){
+					selected=r;
+			//		console.log("check2");
+				}
+				else{
+			//		console.log("chk3");
+					if(selected!=r){
+			//			console.log("chk4");
+						//horizontal line
+						if(yy[r]==yy[selected]){
+							//console.log(yy[r],yy[selected]);
+							//console.log("chk5");
+							if(lines[r][selected]==0){
+								console.log("lines[r][selected]=0");
+								ctx.beginPath();
+							//	console.log("asdfghjkl");
+								ctx.moveTo(xx[r<selected?r:selected]*80+80,yy[r]*80+30);
+								ctx.lineTo(xx[r>selected?r:selected]*80,yy[r]*80+30);
+								ctx.stroke();
+								lines[r][selected]=1;
+								lines[selected][r]=1;
+								selected=-1;
+							}
+							else if(lines[r][selected]==1){
+								console.log("1 line drawn");
+								ctx.beginPath();
+							//	console.log("asdfghjkl");
+								ctx.moveTo(xx[r<selected?r:selected]*80+80,yy[r]*80+50);
+								ctx.lineTo(xx[r>selected?r:selected]*80,yy[r]*80+50);
+								ctx.stroke();
+								lines[r][selected]=2;
+								lines[selected][r]=2;
+								selected=-1;
+							}
+							else{	
+								alert("You cannot create more than two bridges between two elements!");
+								selected=-1
+
+							//selected=-1;
+							}
+						}
+
+						//vertical lines
+
+						if(xx[r]==xx[selected]){
+							//console.log(yy[r],yy[selected]);
+							console.log("chk5");
+							if(lines[r][selected]==0){
+								console.log("chk6");
+								ctx.beginPath();
+								console.log("asdfghjkl");
+								ctx.moveTo(xx[r]*80+30,yy[r<selected?r:selected]*80+80);
+								ctx.lineTo(xx[r]*80+30,yy[r>selected?r:selected]*80);
+								ctx.stroke();
+								lines[r][selected]=1;
+								lines[selected][r]=1;
+								selected=-1;
+							}
+							else if(lines[r][selected]==1){
+								console.log("chk6");
+								ctx.beginPath();
+								console.log("asdfghjkl");
+								ctx.moveTo(xx[r]*80+50,yy[r<selected?r:selected]*80+80);
+								ctx.lineTo(xx[r]*80+50,yy[r>selected?r:selected]*80+0);
+								ctx.stroke();
+								lines[r][selected]=2;
+								lines[selected][r]=2;
+								selected=-1;
+							}
+
+							else{	
+								alert("You cannot create more than two bridges between two elements!");
+								selected=-1
+
+							//selected=-1;
+							}
+							//selected=-1;
+						}
+
+						//selected =-1;
+					}
+				//	selected=-1;
+				}
+
+			}
+
+			function submit(){
+				console.log(lines);
+				if(JSON.stringify(lines)==JSON.stringify(s))
+					alert("correct");
+				else
+					alert("wrong");
+			}
+
+						
+			</script>
+				}
+</body>
+</html>

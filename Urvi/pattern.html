@@ -6,14 +6,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>  
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
  	<!link rel="stylesheet" type="text/css" href="a.css">
 
 </head>
 <body>
 	<div class="container" align="center">
 		<h1>JOIN THE DOTS!</h1>
-	 	<canvas id="canvas" width="1000" height="500" style="border:1px solid #fff451"></canvas>
+	 	<canvas id="canvas" width="1000" height="500" style="border:1px solid #ffffff"></canvas>
+	 	<div>
+	 		<button type="button" class="btn btn-success" onclick="undo()">Undo</button>
+	 	</div>
 		
 		
 				
@@ -25,10 +29,14 @@
 			var text=[9,9,9,9,9,1,1,1,10,8,9,9,9,12,8,8,6,3,3,3,3,6,6,6,6,12];
 			//////REMOVE////////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			var a=[];
+			var flag;
+			var selected= [-1,-1];//[r of 1st dot,c of 1st dot, r of 2nd dot, c of 2nd dot]
+			
 			for(var i=0;i<12;i++)
 				a[i]=i+1;
 			var c=document.getElementById("canvas");
 			var ctx=c.getContext("2d");
+			ctx.font="17px Georgia";
 			for(var x=0; x<15;x++){
       			for(var y=0; y<8;y++){
         			ctx.fillStyle = "#ff8c1a";
@@ -38,7 +46,7 @@
         			ctx.fill();  
         			ctx.beginPath();
         			ctx.fillStyle="black";
-        			var flag=0;
+        			flag=0;
         			for(var w=0;w<26;w++){
         				if(x==ansr[w] && y==ansc[w]){
         					ctx.fillText(text[w],10+60*x,18+60*y);
@@ -52,9 +60,9 @@
     		 	}
     		 }
     		 ctx.beginPath();
-    		 ctx.font="25px Georgia";
-    		 ctx.fillText("Start",870,450);
-    		 ctx.fillText("End",295,480)
+    		 ctx.font="18px Georgia";
+    		 ctx.fillText("Start",870,443);
+    		 ctx.fillText("End",300,470)
     		 ctx.fill();
     		// ctx.fillText("0",10,18);
 			//Function to get the mouse position
@@ -102,7 +110,6 @@
 			}, false);
 			var qr=[];
 			var qc=[];
-			var selected= [-1,-1];//[r of 1st dot,c of 1st dot, r of 2nd dot, c of 2nd dot]
 			function click(r,c){
 				if(selected[0]==-1){
 					selected[0]=r;
@@ -132,11 +139,61 @@
 			
 			//console.log('zxcvbnm');
 			}
+			function undo(){
+				console.log("undo");
+				var r=qr.pop();
+				var c=qc.pop();
+				ctx.fillStyle="#ffffff";
+				ctx.fillRect(0,0,1000,500);
+				for(var x=0; x<15;x++){
+      			for(var y=0; y<8;y++){
+        			ctx.fillStyle = "#ff8c1a";
+        			ctx.beginPath();
+        			ctx.arc(15+60*x,15+ 60*y, 15, 0, Math.PI*2, true); 
+       				ctx.closePath();
+        			ctx.fill();  
+        			ctx.beginPath();
+        			ctx.fillStyle="black";
+        			flag=0;
+        			for(var w=0;w<26;w++){
+        				if(x==ansr[w] && y==ansc[w]){
+        					ctx.font="18px Georgia";
+
+        					ctx.fillText(text[w],10+60*x,18+60*y);
+        					flag=1;
+        					break;
+        				}
+        			}
+        			if(flag==0)
+        			ctx.fillText(a[parseInt(Math.random()*12)],10+60*x,18+60*y);
+        			ctx.fill();
+    		 	}
+    		 }
+    		 ctx.beginPath();
+    		 ctx.font="18px Georgia";
+    		 ctx.fillText("Start",870,443);
+    		 ctx.fillText("End",300,470)
+    		 ctx.fill();
+    		//var qr=[];
+			//var qc=[];
+			//var selected= [-1,-1];//[r of 1st dot,c of 1st 
+			selected[0]=qr[qr.length-1];
+			selected[1]=qc[qc.length-1];
+			//console.log(qr);
+			//console.log()
+			console.log(selected);
+			for(var w=0;w<qr.length-1;w++){
+				ctx.beginPath();
+				ctx.moveTo(qr[w]*60+15,qc[w]*60+15);
+				ctx.lineTo(qr[w+1]*60+15,qc[w+1]*60+15);
+				ctx.stroke();
+
+			}
+			// 
+		}
 
 			
-		</script> 
-  	 
-	    
+		</script> 	 
 	</div>
 
 </body>

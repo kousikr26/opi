@@ -9,6 +9,7 @@ var scores = [];
 var dimensions1 = [];
 var dimensions2 = [];
 var x= 0;
+var z= 0;
 var y= 0;
 
 function click(){
@@ -28,7 +29,7 @@ function click(){
         while(selected_corners.length<4){
         	if(selected_corners.length==2 || selected_corners.length==4) {
         		newButton.textContent = "Selected";
-                /newButton.onclick = break();
+                //newButton.onclick = break();
             }
             else if(selected_corners.length != 2 && selected_corners.length != 4){
             	newButton.textContent== "Select each corner(2 OR 4) of rectangle you want to select"
@@ -129,17 +130,23 @@ function dimension_check(){
 		}
 	}
 
-}    
+    for(var i= 0; i<dimensions1.length; i++){
+        for(var j = i+1 ; j<dimensions1.length; j++){
+                if(dimensions1[i]==dimensions2[j]) if(dimensions2[i]==dimensions1[j]) z=1;
+        }
+    }
 
+}    
+var score = 0;
 function check(){
 	if($(".box-container .temp").length > 0){
 		alert("Select all grids first..!");
 	}else {
 		dimension_check();
-		if(x==0){
+		if(x==0 && z==0){
 		var min_area = Math.min.apply(Math, scores);
  		var max_area = Math.max.apply(Math, scores);
- 		var score = max_area - min_area;
+        score = max_area - min_area;
  		document.getElementById("largest").textContent = max_area;
  		document.getElementById("smallest").textContent =  min_area;
  		document.getElementById("ans").textContent = score;
@@ -152,7 +159,7 @@ function check(){
 	}
 
 function submit(){
-	alert(":)")
+	alert(score);
 }	
 
 var box = document.querySelector(".box-container");

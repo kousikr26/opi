@@ -1,0 +1,21 @@
+  	if((g==0||g==3||g==6||g==27||g==30||g==33||g==54||g==57||g==60))
+    {
+      if((h>=0&&h<3)||(h>=9&&h<12)||(h>=18&&h<21)){
+        a[i].style.background=color;
+        alter+=1;
+        if(alter%2==0)
+          {
+          color="pink";
+          p[i]=1;
+          }
+        else
+          {
+          color="blue";
+          p[i]=2;
+          }
+          g=i;
+      }
+      else if(r[0]==1){
+
+      }
+    }

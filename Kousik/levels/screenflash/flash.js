@@ -20,7 +20,7 @@ var timeouts = [];
 function play(){
 	
 	var count=delaytim[0];
-	var factor=220;
+	var factor=500;
 	for (var j=0; j<timeouts.length; j++) {
   		clearTimeout(timeouts[j]);
 	}

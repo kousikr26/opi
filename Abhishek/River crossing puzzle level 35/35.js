@@ -5,11 +5,11 @@ selected_corners = [];
 function click(){
 	if(this.classList.contains("temp")){
 	if(this.classList.contains("selected")){
-		   this.style.background = "#ffff66";
+		   this.style.opacity = 0.6;
 		   this.classList.remove("selected");
 		   selected_corners = [];
 	}else {
-	this.style.background = "grey";
+	this.style.opacity = 1;
 	this.classList.add("selected");
 	selected_corners.push(Number(this.id.slice(3)));
 	if(selected_corners.length == 2) vanish(); 
@@ -21,26 +21,29 @@ function vanish(){
 	if(document.getElementById("Box" + selected_corners[0]).textContent == document.getElementById("Box" + selected_corners[1]).textContent){	
 		 var min = Math.min.apply(Math, selected_corners);  console.log(min);
          var max = Math.max.apply(Math, selected_corners);  console.log(max);
-         		if((max-min)%n !=0  &&  (max-min)<(n-(min%n)) ){ for(var i= min; i<= max; i++) {
+         		if((max-min)%n !=0  &&  (max-min)<=(n-(min%n)) ){ for(var i= min; i<= max; i++) {
          		   																var b=document.getElementById("Box"+ i);
          		   																b.style.background = "grey"; 
-         				 													    b.classList.remove("temp");  }         	
+         				 													    b.classList.remove("temp");
+         				 													    b.classList.add("vanish");
+         				 													      }         	
          		        				selected_corners=[];										    				 													    
          		   }else if((max-min)%n == 0) {for(var i= min; i<= max; i+=n){
          		   										var b=document.getElementById("Box"+ i);
          		   										b.style.background = "grey";
-         		   										b.classList.remove("temp");    }         				 		
+         		   										b.classList.remove("temp");  
+         		   										b.classList.add("vanish");  }         				 		
          		        		selected_corners=[];				            				 													    
          		   }
          		   		
          			else{
          				alert("Select only 2 boxes in a line");
-            			for(var i=0; i<selected_corners.length; i++)  	document.getElementById("Box"+selected_corners[i]).style.background = "#ffff66";
+            			for(var i=0; i<selected_corners.length; i++)  	document.getElementById("Box"+selected_corners[i]).style.opacity = 0.6;
             	  		selected_corners=[];
 
          			}
          	}else{
-         			for(var i=0; i<selected_corners.length; i++)  	document.getElementById("Box"+selected_corners[i]).style.background = "#ffff66";
+         			for(var i=0; i<selected_corners.length; i++)  	document.getElementById("Box"+selected_corners[i]).style.opacity = 0.6;
             	  	selected_corners=[];
          	}		
 }

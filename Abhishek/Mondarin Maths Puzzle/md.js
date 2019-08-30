@@ -137,7 +137,7 @@ function dimension_check(){
     }
 
 }    
-
+var score = 0;
 function check(){
 	if($(".box-container .temp").length > 0){
 		alert("Select all grids first..!");
@@ -146,7 +146,7 @@ function check(){
 		if(x==0 && z==0){
 		var min_area = Math.min.apply(Math, scores);
  		var max_area = Math.max.apply(Math, scores);
- 		var score = max_area - min_area;
+        score = max_area - min_area;
  		document.getElementById("largest").textContent = max_area;
  		document.getElementById("smallest").textContent =  min_area;
  		document.getElementById("ans").textContent = score;
@@ -159,7 +159,7 @@ function check(){
 	}
 
 function submit(){
-	alert(":)")
+	alert(score);
 }	
 
 var box = document.querySelector(".box-container");

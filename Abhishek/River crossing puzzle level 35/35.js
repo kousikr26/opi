@@ -22,11 +22,11 @@ function vanish(){
 		 var min = Math.min.apply(Math, selected_corners);  console.log(min);
          var max = Math.max.apply(Math, selected_corners);  console.log(max);
          		if((max-min)%n !=0  &&  (max-min)<=(n-(min%n)) ){ for(var i= min; i<= max; i++) {
-         		   																var b=document.getElementById("Box"+ i);
-         		   																b.style.background = "grey"; 
-         				 													    b.classList.remove("temp");
-         				 													    b.classList.add("vanish");
-         				 													      }         	
+											var b=document.getElementById("Box"+ i);
+											b.style.background = "grey"; 
+										    b.classList.remove("temp");
+										    b.classList.add("vanish");
+										}
          		        				selected_corners=[];										    				 													    
          		   }else if((max-min)%n == 0) {for(var i= min; i<= max; i+=n){
          		   										var b=document.getElementById("Box"+ i);

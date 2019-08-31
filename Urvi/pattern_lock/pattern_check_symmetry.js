@@ -120,6 +120,7 @@ var lock = new PatternLock("#lock", {
 	//console.log(p.length)	;			
    if(p.length>8 && los>0)
    	alert("Correct");
+   
    else
    	lock.clear();
    // 	alert("you lose. try again");

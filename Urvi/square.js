@@ -162,6 +162,7 @@ function check(){
             else{
                 console.log("no of dots removed:");
             	console.log(25-c);
+                
                 if(c==15)
                     alert("Correct. 10 dots removed- you get 30 points!");
                 else if(c==14)

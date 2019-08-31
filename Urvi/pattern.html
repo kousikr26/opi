@@ -29,11 +29,16 @@
 			var text=[9,9,9,9,9,1,1,1,10,8,9,9,9,12,8,8,6,3,3,3,3,6,6,6,6,12];
 			//////REMOVE////////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			var a=[];
+			for(var i=0;i<12;i++)
+				a[i]=i+1;
+			var numbers=[];
+			var no=0;
+			for(var s=0;s<120;s++)
+				numbers[s]=a[parseInt(Math.random()*12)];
 			var flag;
 			var selected= [-1,-1];//[r of 1st dot,c of 1st dot, r of 2nd dot, c of 2nd dot]
 			
-			for(var i=0;i<12;i++)
-				a[i]=i+1;
+
 			var c=document.getElementById("canvas");
 			var ctx=c.getContext("2d");
 			ctx.font="17px Georgia";
@@ -54,8 +59,10 @@
         					break;
         				}
         			}
-        			if(flag==0)
-        			ctx.fillText(a[parseInt(Math.random()*12)],10+60*x,18+60*y);
+        			if(flag==0){
+        				ctx.fillText(numbers[no],10+60*x,18+60*y);
+        				no++;
+        			}
         			ctx.fill();
     		 	}
     		 }
@@ -140,6 +147,7 @@
 			//console.log('zxcvbnm');
 			}
 			function undo(){
+				no=0;
 				console.log("undo");
 				var r=qr.pop();
 				var c=qc.pop();
@@ -164,8 +172,11 @@
         					break;
         				}
         			}
-        			if(flag==0)
-        			ctx.fillText(a[parseInt(Math.random()*12)],10+60*x,18+60*y);
+
+        			if(flag==0){
+        			ctx.fillText(numbers[no],10+60*x,18+60*y);
+        			no++;
+        			}
         			ctx.fill();
     		 	}
     		 }

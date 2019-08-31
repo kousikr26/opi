@@ -2,6 +2,7 @@ var n=9;
 numbers = [1,1,2,3,2,4,4,4,6,2,2,4,5,4,7,8,4,6,5,5,1,5,1,2,4,9,6,5,3,1,5,3,6,3,'A',5,1,5,'B',4,8,3,2,1,1,6,3,5,5,4,'A',3,5,9,5,7,7,8,3,4,2,'B',6,3,8,'B',3,5,3,2,'A',4,2,8,8,2,1,2,1,4,5];
 selected_corners = [];
 
+
 function click(){
 	if(this.classList.contains("temp")){
 	if(this.classList.contains("selected")){
@@ -21,12 +22,12 @@ function vanish(){
 	if(document.getElementById("Box" + selected_corners[0]).textContent == document.getElementById("Box" + selected_corners[1]).textContent){	
 		 var min = Math.min.apply(Math, selected_corners);  console.log(min);
          var max = Math.max.apply(Math, selected_corners);  console.log(max);
-         		if((max-min)%n !=0  &&  (max-min)<=(n-(min%n)) ){ for(var i= min; i<= max; i++) {
-											var b=document.getElementById("Box"+ i);
-											b.style.background = "grey"; 
-										    b.classList.remove("temp");
-										    b.classList.add("vanish");
-										}
+         		if((max-min)%n !=0  &&  (max-min)<=(n-(min%n)) && (max !=80 && min !=72)){ for(var i= min; i<= max; i++) {
+         		   																var b=document.getElementById("Box"+ i);
+         		   																b.style.background = "grey"; 
+         				 													    b.classList.remove("temp");
+         				 													    b.classList.add("vanish");
+         				 													      }         	
          		        				selected_corners=[];										    				 													    
          		   }else if((max-min)%n == 0) {for(var i= min; i<= max; i+=n){
          		   										var b=document.getElementById("Box"+ i);
@@ -34,6 +35,10 @@ function vanish(){
          		   										b.classList.remove("temp");  
          		   										b.classList.add("vanish");  }         				 		
          		        		selected_corners=[];				            				 													    
+         		   }else if(max == 80 && min == 72){
+         		   				alert("Select only 2 boxes in a line");
+            					for(var i=0; i<selected_corners.length; i++)  	document.getElementById("Box"+selected_corners[i]).style.opacity = 0.6;
+            	  				selected_corners=[];
          		   }
          		   		
          			else{
@@ -46,6 +51,12 @@ function vanish(){
          			for(var i=0; i<selected_corners.length; i++)  	document.getElementById("Box"+selected_corners[i]).style.opacity = 0.6;
             	  	selected_corners=[];
          	}		
+}
+
+function autosubmit()
+{
+	setInterval(function() {if($(".box-container .temp").length <= 0) alert("BC Sutta!");}),3000;
+
 }
 
 function submit(){

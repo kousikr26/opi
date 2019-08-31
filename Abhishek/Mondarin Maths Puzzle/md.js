@@ -79,7 +79,7 @@ function click(){
             else if(selected_corners.length==2){
          		      var min = Math.min.apply(Math, selected_corners);  console.log(min);
          			  var max = Math.max.apply(Math, selected_corners);  console.log(max);
-         		   				if((max-min)%n !=0  &&  (max-min)<(n-(min%n)) ){ for(var i= min; i<= max; i++) {
+         		   				if((max-min)%n !=0  &&  (max-min)<=(n-(min%n)) && min%n != 0 ){ for(var i= min; i<= max; i++) {
          		   																var b=document.getElementById("Box"+ i);
          		   																b.style.background = current_color;
          				 													    b.classList.add(c); 
@@ -137,7 +137,7 @@ function dimension_check(){
     }
 
 }    
-var score = 0;
+
 function check(){
 	if($(".box-container .temp").length > 0){
 		alert("Select all grids first..!");
@@ -146,7 +146,7 @@ function check(){
 		if(x==0 && z==0){
 		var min_area = Math.min.apply(Math, scores);
  		var max_area = Math.max.apply(Math, scores);
-        score = max_area - min_area;
+ 		var score = max_area - min_area;
  		document.getElementById("largest").textContent = max_area;
  		document.getElementById("smallest").textContent =  min_area;
  		document.getElementById("ans").textContent = score;
@@ -159,7 +159,7 @@ function check(){
 	}
 
 function submit(){
-	alert(score);
+	alert(":)")
 }	
 
 var box = document.querySelector(".box-container");

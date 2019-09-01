@@ -1,4 +1,4 @@
-var colors = ["#00ff00" , "#ff0000" , "#0000ff", "#666666", "#ffffff" , "#00ffff", "#cc00cc", "#cc0066", "#333300", "#ffff1a" ] ; 
+var colors = ["#00ff00" , "#ff0000" , "#0000ff", "#666666", "#ffffff" , "#00ffff", "#cc00cc", "#cc0066", "#333300", "#ffff1a", 	"#6666ff", "#ff6666", "#332600" ] ; 
 var c = 0;
 var n= 8;
 var current_color = colors[c];
